@@ -2,6 +2,7 @@
 const Index = () => {
     return (
         <>
+            Olá!
         </>
     )
 }

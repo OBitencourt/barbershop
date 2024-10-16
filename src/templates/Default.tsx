@@ -11,7 +11,7 @@ const Default = ({children}: DefaultProps) => {
 
     return (
         <>
-            <div style={{width: '100%', display: 'flex', justifyContent: 'center', marginTop: 10}}>
+            <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
                 <Header />
             </div>
             <Container
