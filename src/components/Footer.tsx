@@ -3,8 +3,9 @@ import styled from 'styled-components'
 import { Container, Grid, Typography } from '@mui/material'
 
 const StyledFooter = styled.footer`
-    padding: 10px;
+    padding: 20px;
     color: white;
+    border-top: 1px solid white;
 `
 
 const Footer = () => {
@@ -40,8 +41,9 @@ const Footer = () => {
                                 Contate-nos
                             </Typography>
                             <Typography>
-                                <div>E-mail:</div> barbershop.exemplo@gmail.com
-                                <div>Telefone:</div> +351 92 123 45 67
+                                E-mail: barbershop.exemplo@gmail.com
+                                <br />
+                                Telefone: +351 92 123 45 67
                             </Typography>
                         </Grid>
                     </Grid>

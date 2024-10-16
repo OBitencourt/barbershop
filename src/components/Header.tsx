@@ -13,39 +13,51 @@ const StyledHeader = styled.header`
     align-items: center;
 `;
 
-const StyledButton = styled.button`
+const StyledButton = styled.button<{$isActive: boolean}>`
     display: inline-block;
     width: 88px;
-    margin-right: 2px;
+
     padding: 7px;
     color: #494747c5;
     cursor: pointer;
     border: none;
-    font-size: 17px;
-    border-radius: 20px / 70px;
-    transition: all 500ms ease-in-out;
+    font-size: 15px;
+    border-radius: .75em;
+    transition: all 250ms ease-in-out;
     background-color: rgba(131, 130, 130, 0.2);
     border: 1px solid transparent;
     text-align: center;
 
     &:hover {
-        color: black;
-        background-color: rgba(131, 130, 130, 0.2);
-        filter: brightness(0.3);
+        color: white;
+        background-color: #00000092;
+        
         border: 1px solid #4b484845;
     }
+
+    ${({ $isActive }) => $isActive ? `
+        color: white;
+        background-color: #000000cc;
+        border: 1px solid #4b484845;
+    ` : `
+        color: #494747c5;
+        background-color: rgba(131, 130, 130, 0.2);
+        border: 1px solid transparent;
+    `}
 `;
 
 const StyledNav = styled.nav`
-    padding: 3px 3px 3px;
+    padding: 2px 2px 2px;
     border: 1px solid gray;
-    border-radius: 20px / 70px;
+    border-radius: .75em;
+    display: flex;
+    justify-content: space-between;
 `;
 
 const Div = styled.div`
     display: flex;
     position: absolute;
-    top: 15%;
+    top: 20%;
     right: 10px;
 `;
 
@@ -75,22 +87,29 @@ const Header = () => {
             />
             <Container maxWidth='sm'>
                 <StyledNav>
-                    <StyledButton onClick={() => handleNavigation('/')}>
+                    <StyledButton 
+                        $isActive={router.pathname === '/'}
+                        onClick={() => handleNavigation('/')}
+                    >
                         Home
                     </StyledButton>
-                    <StyledButton onClick={() => handleNavigation('/gallery')}>
+                    <StyledButton 
+                        $isActive={router.pathname === '/gallery'}
+                        onClick={() => handleNavigation('/gallery')}
+                        
+                    >
                         Gallery
                     </StyledButton>
-                    <StyledButton onClick={() => handleNavigation('/team')}>
+                    <StyledButton $isActive={router.pathname === '/team'} onClick={() => handleNavigation('/team')}>
                         Team
                     </StyledButton>
-                    <StyledButton onClick={() => handleNavigation('/services')}>
+                    <StyledButton $isActive={router.pathname === '/services'} onClick={() => handleNavigation('/services')}>
                         Services
                     </StyledButton>
-                    <StyledButton onClick={() => handleNavigation('/news')}>
+                    <StyledButton $isActive={router.pathname === '/news'} onClick={() => handleNavigation('/news')}>
                         News
                     </StyledButton>
-                    <StyledButton onClick={() => handleNavigation('/career')}>
+                    <StyledButton $isActive={router.pathname === '/career'} onClick={() => handleNavigation('/career')}>
                         Career
                     </StyledButton>
                 </StyledNav>
@@ -100,16 +119,16 @@ const Header = () => {
                     <Image  
                         src="/images/facebook.svg"  
                         alt="Facebook"
-                        width={40}
-                        height={40}
+                        width={35}
+                        height={35}
                     />
                 </StyledIcon>
                 <StyledIcon href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                     <Image  
                         src="/images/instagram-fill.svg"  
                         alt="Instagram"
-                        width={40}
-                        height={40}
+                        width={35}
+                        height={35}
                     />
                 </StyledIcon>
             </Div>

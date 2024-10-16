@@ -6,7 +6,7 @@ const StyledSection = styled.section`
     background-color: white;
     width: 100%;
     height: 100vh;
-    padding-top: 45px;
+
 `
 const StyledButton = styled.button`
     width: 45%;
@@ -46,7 +46,12 @@ const Index = () => {
                 </Typography>
             </Container>
 
-            <StyledSection>
+            <StyledSection
+                style={{
+                    display: 'flex',
+                    alignItems: 'center'
+                }}
+            >
                 <Container maxWidth='lg'>
 
                     <Grid container spacing={4} >
