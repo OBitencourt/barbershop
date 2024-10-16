@@ -1,6 +1,7 @@
 import { Container } from '@mui/material';
 import Image from 'next/image';
 import styled from 'styled-components';
+import { useRouter } from 'next/router'; // Importando useRouter
 
 const StyledHeader = styled.header`
     height: 60px;
@@ -12,7 +13,7 @@ const StyledHeader = styled.header`
     align-items: center;
 `;
 
-const StyledButton = styled.a`
+const StyledButton = styled.button`
     display: inline-block;
     width: 88px;
     margin-right: 2px;
@@ -46,7 +47,8 @@ const Div = styled.div`
     position: absolute;
     top: 15%;
     right: 10px;
-`
+`;
+
 const StyledIcon = styled.a`
     transition: transform 200ms ease-in-out;
     margin-right: 5px;
@@ -56,10 +58,16 @@ const StyledIcon = styled.a`
 `;
 
 const Header = () => {
+    const router = useRouter(); // Usando o useRouter
+
+    const handleNavigation = (path: string) => {
+        router.push(path); // Navegando para a rota desejada
+    };
+
     return (
         <StyledHeader>
             <Image  
-                src="/images/tesoura-pentes-icon.webp"  // Corrigido caminho
+                src="/images/tesoura-pentes-icon.webp"  
                 alt="Developer"
                 width={100}
                 height={60}
@@ -67,47 +75,46 @@ const Header = () => {
             />
             <Container maxWidth='sm'>
                 <StyledNav>
-                    <StyledButton style={{ marginLeft: '4px' }} >
+                    <StyledButton onClick={() => handleNavigation('/')}>
                         Home
                     </StyledButton>
-                    <StyledButton >
+                    <StyledButton onClick={() => handleNavigation('/gallery')}>
                         Gallery
                     </StyledButton>
-                    <StyledButton >
+                    <StyledButton onClick={() => handleNavigation('/team')}>
                         Team
                     </StyledButton>
-                    <StyledButton >
+                    <StyledButton onClick={() => handleNavigation('/services')}>
                         Services
                     </StyledButton>
-                    <StyledButton >
+                    <StyledButton onClick={() => handleNavigation('/news')}>
                         News
                     </StyledButton>
-                    <StyledButton >
+                    <StyledButton onClick={() => handleNavigation('/career')}>
                         Career
                     </StyledButton>
                 </StyledNav>
             </Container>
             <Div>
-
-            <StyledIcon href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                <Image  
-                    src="/images/facebook.svg"  // Corrigido caminho
-                    alt="Facebook"
-                    width={40}
-                    height={40}
-                />
-            </StyledIcon>
-            <StyledIcon href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                <Image  
-                    src="/images/instagram-fill.svg"  // Corrigido caminho
-                    alt="Facebook"
-                    width={40}
-                    height={40}
-                />
-            </StyledIcon>
+                <StyledIcon href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                    <Image  
+                        src="/images/facebook.svg"  
+                        alt="Facebook"
+                        width={40}
+                        height={40}
+                    />
+                </StyledIcon>
+                <StyledIcon href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                    <Image  
+                        src="/images/instagram-fill.svg"  
+                        alt="Instagram"
+                        width={40}
+                        height={40}
+                    />
+                </StyledIcon>
             </Div>
         </StyledHeader>
     );
-}
+};
 
 export default Header;
