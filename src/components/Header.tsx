@@ -23,6 +23,7 @@ const StyledButton = styled.button`
     border-radius: 20px / 70px;
     transition: all 500ms ease-in-out;
     background-color: rgba(131, 130, 130, 0.2);
+    border: 1px solid transparent;
 
     &:hover {
         color: black;

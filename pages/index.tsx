@@ -17,7 +17,7 @@ const StyledButton = styled.button`
     margin: 50px 5px;
     cursor: pointer;
     border-radius: 7px / 20px;
-    transition: all 200ms ease;
+    transition: all 300ms ease;
     font-size: 15px;
 
     &:hover {
@@ -50,7 +50,7 @@ const Index = () => {
                 <Container maxWidth='lg'>
 
                     <Grid container spacing={4} >
-                        <Grid item>
+                        <Grid item md={6}>
                             <Image  
                                 src="/images/barber-photo-home.png"  // Corrigido caminho
                                 alt="Developer"
@@ -59,7 +59,7 @@ const Index = () => {
                                 style={{borderRadius: '10px', border: '2px solid black'}}
                             />
                         </Grid>
-                        <Grid item sx={{width: '50%'}}>
+                        <Grid item md={6} sx={{width: '50%'}}>
                             <Typography
                                 component='h2'
                                 variant="h3"
