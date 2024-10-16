@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styled from 'styled-components';
 
 const StyledHeader = styled.header`
-    height: 70px;
+    height: 60px;
     width: 100%;
     background-color: white;
     box-shadow: 1px 1px 10px gray;
@@ -15,19 +15,20 @@ const StyledHeader = styled.header`
 const StyledButton = styled.button`
     width: 88px;
     margin-right: 2px;
-    padding: 10px;
-    color: #494747;
+    padding: 7px;
+    color: #494747c5;
     cursor: pointer;
     border: none;
     font-size: 17px;
     border-radius: 20px / 70px;
-    transition: all 500ms ease;
+    transition: all 500ms ease-in-out;
     background-color: rgba(131, 130, 130, 0.2);
 
     &:hover {
         color: black;
         background-color: rgba(131, 130, 130, 0.2);
         filter: brightness(0.3);
+        border: 1px solid #4b484845;
     }
 `
 
@@ -46,7 +47,7 @@ const Header = () => {
                 src="/images/tesoura-pentes-icon.webp"  // Corrigido caminho
                 alt="Developer"
                 width={100}
-                height={70}
+                height={60}
                 style={{ position: 'absolute', top: 0}}
             />
             <Container
