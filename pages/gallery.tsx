@@ -57,7 +57,7 @@ const Gallery = () => {
                         Veja alguns de nossos trabalhos!
                     </Typography>
                     <StyledCarousel 
-                        
+                        autoPlaySpeed={1500}
                         responsive={responsive}
                         infinite={true}
                         swipeable={true}

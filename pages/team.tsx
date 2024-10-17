@@ -76,13 +76,13 @@ const Team = () => {
                     <Card>
                         <Grid container sx={{display: 'flex', alignItems: 'center'}}>
                             <Grid item md={6} >
-                            <Image  
-                                src="/images/barber-3.png"  // Corrigido caminho
-                                alt="Developer"
-                                width={350}
-                                height={300}
-                                style={{padding: 10}}
-                            />
+                                <Image  
+                                    src="/images/barber-3.png"  // Corrigido caminho
+                                    alt="Developer"
+                                    width={350}
+                                    height={300}
+                                    style={{padding: 10}}
+                                />
                             </Grid>
                             <Grid item md={6} sx={{color: 'white'}}>
                                 <Typography variant="h6">
