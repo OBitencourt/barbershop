@@ -38,6 +38,24 @@ const StyledImageWrapper = styled.div`
 
 `;
 
+const StyledButton = styled.button`
+    width: 45%;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 15px;
+    margin: 50px 5px;
+    cursor: pointer;
+    border-radius: 7px / 20px;
+    transition: all 300ms ease;
+    font-size: 15px;
+
+    &:hover {
+        background-color: white;
+        color: #171515;
+    }
+`
+
 const Services = () => {
     return (
         <Container
@@ -97,6 +115,9 @@ const Services = () => {
                     </Typography>
                 </StyledImageWrapper>
             </StyledBox>
+            <StyledButton>
+                Reserve agora
+            </StyledButton>
         </Container>
     );
 };
