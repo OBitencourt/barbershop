@@ -39,6 +39,12 @@ const StyledButton = styled.button<{$isActive: boolean}>`
         color: white;
         background-color: #000000cc;
         border: 1px solid #4b484845;
+
+        &:hover {
+            color: white;
+            background-color: #000000cc;
+            border: 1px solid #4b484845;
+        }
     ` : `
         color: #494747c5;
         background-color: rgba(131, 130, 130, 0.2);

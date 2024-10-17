@@ -29,7 +29,7 @@ const StyledButton = styled.button`
 const Index = () => {
     return (
         <>
-            <Container maxWidth='md' sx={{textAlign: 'center', color: 'white', height: '90vh'}}>
+            <Container maxWidth='md' sx={{textAlign: 'center', color: 'white', height: '90vh', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
                 <Image  
                     src="/images/big-barber-logo.png"  // Corrigido caminho
                     alt="Developer"
@@ -70,7 +70,7 @@ const Index = () => {
                                 variant="h3"
                                 fontSize={35}
                             >
-                                Empire Cuts - Gentlemens Lounge
+                                Hard Barber Shop - Gentlemens Lounge
                             </Typography>
                             <Typography
                                 component='p'
