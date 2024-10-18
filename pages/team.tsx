@@ -16,6 +16,18 @@ const Card = styled.div`
     background-color: #171515;
     margin: 10px;
     border-radius: 7px;
+    position: relative;
+
+    @media (max-width: 519px) {
+        height: 500px;
+        margin: 10px 0 0 0;
+        width: 100%;
+
+        & .image {
+            width: 280px;
+            height: 250px;
+        }
+    }
 `
 
 const StyledSVG = styled.svg`
@@ -29,9 +41,7 @@ const StyledSVG = styled.svg`
         transform: scale(1.1);
     }
 
-    @media (max-width: 520px) {
-        display: none; /* O Container vai desaparecer em telas menores que 768px */
-    }
+    
 `;
 
 const Team = () => {
@@ -39,7 +49,7 @@ const Team = () => {
         <>
             <Container
                 maxWidth='md'
-                sx={{height:'90vh', padding: 10, display:'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}
+                sx={{display:'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', textAlign: 'left', padding: 3, paddingTop: 5, paddingBottom: 5}}
             >
                 <Typography
                     color='white'
@@ -71,20 +81,23 @@ const Team = () => {
             >
                 <Container
                     maxWidth='md'
-
+                    sx={{
+                        padding: 10
+                    }}
                 >
                     <Card>
-                        <Grid container sx={{display: 'flex', alignItems: 'center'}}>
-                            <Grid item md={6} >
+                        <Grid container sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                            <Grid item md={6} sm={4} sx={{marginBottom: 5}}>
                                 <Image  
                                     src="/images/barber-3.png"  // Corrigido caminho
                                     alt="Developer"
                                     width={350}
                                     height={300}
                                     style={{padding: 10}}
+                                    className="image"
                                 />
                             </Grid>
-                            <Grid item md={6} sx={{color: 'white'}}>
+                            <Grid item md={6} sm={8} sx={{color: 'white'}}>
                                 <Typography variant="h6">
                                     Sérgio
                                 </Typography>
@@ -104,8 +117,19 @@ const Team = () => {
                         </Grid>
                     </Card>
                     <Card>
-                    <Grid container sx={{display: 'flex', alignItems: 'center'}}>
-                            <Grid item md={7} sx={{color: 'white', paddingLeft: 10}}>
+                    <Grid container sx={{display: 'flex', alignItems: 'center' , justifyContent: 'center'}}>
+                            <Grid
+                                item
+                                md={7}
+                                sx={{
+                                    color: 'white', 
+                                    paddingLeft: 10,
+                                    marginTop: 10,
+                                    '@media (max-width: 376px)': {  // Para telas pequenas (mobile)
+                                        padding: 0,
+                                    },
+                                }}
+                            >
                                 <Typography variant="h6">
                                     Júlio
                                 </Typography>
@@ -122,26 +146,28 @@ const Team = () => {
                                     </StyledSVG>
                                 </a>
                             </Grid>
-                            <Grid item md={5} >
+                            <Grid item md={5} sx={{marginTop: 4}}>
                                 <Image  
                                     src="/images/barber-4.png"  // Corrigido caminho
                                     alt="Developer"
                                     width={350}
                                     height={300}
                                     style={{padding: 10}}
+                                    className="image"
                                 />
                             </Grid>
                         </Grid>
                     </Card>
                     <Card>
-                        <Grid container sx={{display: 'flex', alignItems: 'center'}}>
-                            <Grid item md={6} >
+                        <Grid container sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                            <Grid item md={6} sx={{marginBottom: 5}}>
                             <Image  
                                 src="/images/barber-2.png"  // Corrigido caminho
                                 alt="Developer"
                                 width={350}
                                 height={300}
                                 style={{padding: 10}}
+                                className="image"
                             />
                             </Grid>
                             <Grid item md={6} sx={{color: 'white'}}>
@@ -164,8 +190,19 @@ const Team = () => {
                         </Grid>
                     </Card>
                     <Card>
-                    <Grid container sx={{display: 'flex', alignItems: 'center'}}>
-                            <Grid item md={7} sx={{color: 'white', paddingLeft: 10}}>
+                    <Grid container sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                            <Grid
+                                item
+                                md={7}
+                                sx={{
+                                    color: 'white', 
+                                    paddingLeft: 10 ,
+                                    marginTop: 10,
+                                    '@media (max-width: 376px)': {  // Para telas pequenas (mobile)
+                                        padding: 0,
+                                    },
+                                }}
+                            >
                                 <Typography variant="h6">
                                     Sérgio
                                 </Typography>
@@ -182,13 +219,14 @@ const Team = () => {
                                     </StyledSVG>
                                 </a>
                             </Grid>
-                            <Grid item md={5} >
+                            <Grid item md={5} sx={{marginTop: 5}}>
                                 <Image  
                                     src="/images/barber-1.png"  // Corrigido caminho
                                     alt="Developer"
                                     width={350}
                                     height={300}
                                     style={{padding: 10}}
+                                    className="image"
                                 />
                             </Grid>
                         </Grid>
