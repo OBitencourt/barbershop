@@ -14,7 +14,18 @@ const Footer = () => {
             <StyledFooter>
                 <Container maxWidth='md'>
                     <Grid container spacing={3} sx={{marginTop: 3}}>
-                        <Grid item md={4} sx={{textAlign: 'center', borderRight: '1px solid white', padding: '10px'}}>
+                        <Grid
+                            item
+                            md={4}
+                            sx={{
+                                textAlign: 'center', 
+                                borderRight: '1px solid white', 
+                                padding: '10px',
+                                '@media (max-width: 376px)': {  // Para telas pequenas (mobile)
+                                    border: 'none'
+                                },
+                            }}
+                        >
                             <Typography variant='h6' fontSize={18} sx={{marginBottom: 1}}>
                                 Localização
                             </Typography>
@@ -23,7 +34,18 @@ const Footer = () => {
                                 4000-123 Porto, Portugal
                             </Typography>
                         </Grid>
-                        <Grid item md={4} sx={{textAlign: 'center' , borderRight: '1px solid white', padding: '20px'}}>
+                        <Grid
+                            item
+                            md={4}
+                            sx={{
+                                textAlign: 'center' , 
+                                borderRight: '1px solid white', 
+                                padding: '20px',
+                                '@media (max-width: 376px)': {  // Para telas pequenas (mobile)
+                                    border: 'none'
+                                },
+                            }}
+                        >
                             <Typography variant='h6' fontSize={18} sx={{marginBottom: 1}}>
                                 Horários
                             </Typography>
@@ -36,7 +58,11 @@ const Footer = () => {
                             Encerrado
                             </Typography>
                         </Grid>
-                        <Grid item md={4} sx={{textAlign: 'center', padding: '0px'}}>
+                        <Grid
+                            item
+                            md={4}
+                            sx={{textAlign: 'center', padding: '0px'}}
+                        >
                             <Typography variant='h6' fontSize={18} sx={{marginBottom: 1}}>
                                 Contate-nos
                             </Typography>
