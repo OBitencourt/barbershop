@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const StyledSection = styled.section`
     background-color: white;
     width: 100%;
-    height: 100vh;
+    padding: 20px;
 
 `
 const StyledButton = styled.button`
@@ -24,12 +24,26 @@ const StyledButton = styled.button`
         background-color: #171515;
         color: white;
     }
+
+    @media (max-width: 376px) {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+`
+
+const ResponsiveImage = styled(Image)`
+    @media (max-width: 376px) {
+        width: 300px;
+        height: 300px;
+        border: none;
+    }
 `
 
 const Index = () => {
     return (
         <>
-            <Container maxWidth='md' sx={{textAlign: 'center', color: 'white', height: '90vh', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
+            <Container maxWidth='md' sx={{textAlign: 'center', color: 'white', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center', padding: 5}}>
                 <Image  
                     src="/images/big-barber-logo.png"  // Corrigido caminho
                     alt="Developer"
@@ -55,8 +69,18 @@ const Index = () => {
                 <Container maxWidth='lg'>
 
                     <Grid container spacing={4} >
-                        <Grid item md={6}>
-                            <Image  
+                        <Grid 
+                            item 
+                            md={6} 
+                            sm={4}
+                            sx={{
+                                width: '50%',
+                                '@media (max-width: 376px)': {  // Para telas pequenas (mobile)
+                                    width: '100%'
+                                },
+                            }}
+                        >
+                            <ResponsiveImage  
                                 src="/images/barber-photo-home.png"  // Corrigido caminho
                                 alt="Developer"
                                 width={500}
@@ -64,18 +88,38 @@ const Index = () => {
                                 style={{borderRadius: '10px', border: '2px solid black'}}
                             />
                         </Grid>
-                        <Grid item md={6} sx={{width: '50%'}}>
+                        <Grid 
+                            item 
+                            md={6} 
+                            sm={8} 
+                            sx={{
+                                width: '50%',
+                                '@media (max-width: 376px)': {  // Para telas pequenas (mobile)
+                                    width: '100%'
+                                },
+                            }}
+                        
+                        >
                             <Typography
                                 component='h2'
                                 variant="h3"
                                 fontSize={35}
+                                sx={{
+
+                                    '@media (max-width: 376px)': {  // Para telas pequenas (mobile)
+                                        fontSize: '30px',
+                                    },
+                                }}
                             >
                                 Hard Barber Shop - Gentlemens Lounge
                             </Typography>
                             <Typography
                                 component='p'
                                 variant="body1"
-                                sx={{marginTop: 3}}
+                                sx={{
+                                    marginTop: 3
+                                    
+                                }}
                             >
                                 Abrimos as portas em março de 2018, com a missão de redefinir o conceito de barbearia moderna. Oferecendo serviços de corte de cabelo e barba premium, a barbearia rapidamente se destacou pelo compromisso com a <strong>excelência</strong>. Hoje, contamos com uma equipe de <strong>7 mestres barbeiros</strong>, especializados nas técnicas mais <strong>inovadoras</strong> e nas últimas tendências do estilo masculino.
                             </Typography>
