@@ -73,7 +73,7 @@ const Services = () => {
                     <Image
                         src="/images/hairwash.png"
                         alt="Hair Wash"
-                        width={155}
+                        width={200}
                         height={300}
                     />
                     <Typography align="center">
@@ -84,7 +84,7 @@ const Services = () => {
                     <Image
                         src="/images/beard.webp"
                         alt="Beard"
-                        width={155}
+                        width={200}
                         height={300}
                     />
                     <Typography align="center">
@@ -107,7 +107,7 @@ const Services = () => {
                     <Image
                         src="/images/barboterapia.png"
                         alt="Barboterapia"
-                        width={155}
+                        width={200}
                         height={300}
                     />
                     <Typography align="center">
