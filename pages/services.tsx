@@ -30,6 +30,20 @@ const StyledBox = styled.div`
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
     }
+
+    @media (max-width: 835px) {
+        flex-direction: column;
+        align-items: center;
+
+        & > .box img {
+            border-radius: 10px;
+            
+        }
+
+        & > .box {
+            margin: 10px;
+        }
+    }
 `;
 
 const StyledImageWrapper = styled.div`
@@ -62,7 +76,9 @@ const Services = () => {
             maxWidth='md'
             sx={{paddingBottom: 10  ,paddingTop: 10, color: 'white', display: 'flex', justifyContent:'center', flexDirection: 'column', alignItems: 'center'}}
         >
-            <Typography variant="h3" >
+            <Typography variant="h3" sx={{
+                marginBottom: 5,
+            }} lineHeight={0.8}>
                 Nossos serviços
             </Typography>
             <Typography>
