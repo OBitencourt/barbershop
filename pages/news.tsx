@@ -6,6 +6,11 @@ const StyledBox = styled.div`
     background-color: #333030d5;
     margin-top: 20px;
     padding: 30px;
+
+    @media (max-width: 450px) {
+        padding: 30px;
+        
+    }
 `
 
 const News = () => {
@@ -16,6 +21,9 @@ const News = () => {
                 sx={{
                     color: 'white',
                     padding: 10,
+                    '@media (max-width: 450px)': {  // Para telas pequenas (mobile)
+                        padding: 5
+                    },
                 }}
             >
                 <Typography
