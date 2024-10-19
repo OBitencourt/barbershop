@@ -36,7 +36,18 @@ const Career = () => {
         <>
             <Container
                 maxWidth='md'
-                sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', padding: 10}}
+                sx={{
+                    display: 'flex', 
+                    justifyContent: 'center', 
+                    alignItems: 'center', 
+                    padding: 10,
+
+                    '@media (max-width: 489px)': {  // Para telas pequenas (mobile)
+                        padding: 2,
+                        marginBottom: 10,
+                        marginTop: 10
+                    },
+                }}
             >
                 <StyledBox
                 >
