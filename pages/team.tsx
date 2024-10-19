@@ -28,6 +28,19 @@ const Card = styled.div`
             height: 250px;
         }
     }
+
+    @media (max-width: 519px) {
+        
+        margin: 10px 0 0 0;
+        
+        
+
+        & .image {
+            width: 300;
+            height: 200;
+           
+        }
+    }
 `
 
 const StyledSVG = styled.svg`
@@ -41,7 +54,6 @@ const StyledSVG = styled.svg`
         transform: scale(1.1);
     }
 
-    
 `;
 
 const Team = () => {
@@ -82,7 +94,10 @@ const Team = () => {
                 <Container
                     maxWidth='md'
                     sx={{
-                        padding: 10
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center'
                     }}
                 >
                     <Card>
@@ -93,7 +108,7 @@ const Team = () => {
                                     alt="Developer"
                                     width={350}
                                     height={300}
-                                    style={{padding: 10}}
+                                    style={{padding: 3}}
                                     className="image"
                                 />
                             </Grid>
@@ -122,12 +137,17 @@ const Team = () => {
                                 item
                                 md={7}
                                 sx={{
+                                    
+
                                     color: 'white', 
-                                    paddingLeft: 10,
+                                    paddingLeft: 10 ,
                                     marginTop: 10,
-                                    '@media (max-width: 376px)': {  // Para telas pequenas (mobile)
-                                        padding: 0,
+                                    '@media (max-width: 519px)': {  // Para telas pequenas (mobile)
+                                        padding: '0',
+                                        marginBottom: '35px',
                                     },
+                                    
+                                    
                                 }}
                             >
                                 <Typography variant="h6">
@@ -146,13 +166,13 @@ const Team = () => {
                                     </StyledSVG>
                                 </a>
                             </Grid>
-                            <Grid item md={5} sx={{marginTop: 4}}>
+                            <Grid item md={5} >
                                 <Image  
                                     src="/images/barber-4.png"  // Corrigido caminho
                                     alt="Developer"
                                     width={350}
                                     height={300}
-                                    style={{padding: 10}}
+                                    
                                     className="image"
                                 />
                             </Grid>
@@ -166,7 +186,7 @@ const Team = () => {
                                 alt="Developer"
                                 width={350}
                                 height={300}
-                                style={{padding: 10}}
+                                style={{padding: 2}}
                                 className="image"
                             />
                             </Grid>
@@ -198,8 +218,9 @@ const Team = () => {
                                     color: 'white', 
                                     paddingLeft: 10 ,
                                     marginTop: 10,
-                                    '@media (max-width: 376px)': {  // Para telas pequenas (mobile)
-                                        padding: 0,
+                                    '@media (max-width: 519px)': {  // Para telas pequenas (mobile)
+                                        padding: '0',
+                                        marginBottom: '40px',
                                     },
                                 }}
                             >
@@ -219,13 +240,13 @@ const Team = () => {
                                     </StyledSVG>
                                 </a>
                             </Grid>
-                            <Grid item md={5} sx={{marginTop: 5}}>
+                            <Grid item md={5} >
                                 <Image  
                                     src="/images/barber-1.png"  // Corrigido caminho
                                     alt="Developer"
                                     width={350}
                                     height={300}
-                                    style={{padding: 10}}
+                                    style={{padding: 3}}
                                     className="image"
                                 />
                             </Grid>
