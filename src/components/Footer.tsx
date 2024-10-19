@@ -13,7 +13,7 @@ const Footer = () => {
         <>
             <StyledFooter>
                 <Container maxWidth='md'>
-                    <Grid container spacing={3} sx={{marginTop: 3}}>
+                    <Grid container spacing={3} sx={{marginTop: 3, display: 'flex', justifyContent: 'center'}}>
                         <Grid
                             item
                             md={4}
@@ -21,7 +21,7 @@ const Footer = () => {
                                 textAlign: 'center', 
                                 borderRight: '1px solid white', 
                                 padding: '10px',
-                                '@media (max-width: 376px)': {  // Para telas pequenas (mobile)
+                                '@media (max-width: 900px)': {  // Para telas pequenas (mobile)
                                     border: 'none'
                                 },
                             }}
@@ -41,7 +41,7 @@ const Footer = () => {
                                 textAlign: 'center' , 
                                 borderRight: '1px solid white', 
                                 padding: '20px',
-                                '@media (max-width: 376px)': {  // Para telas pequenas (mobile)
+                                '@media (max-width: 900px)': {  // Para telas pequenas (mobile)
                                     border: 'none'
                                 },
                             }}

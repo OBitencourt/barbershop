@@ -25,7 +25,7 @@ const StyledButton = styled.button`
         color: white;
     }
 
-    @media (max-width: 376px) {
+    @media (max-width: 1063px) {
         width: 100%;
         margin: 0 auto;
         margin-top: 20px;
@@ -33,10 +33,17 @@ const StyledButton = styled.button`
 `
 
 const ResponsiveImage = styled(Image)`
-    @media (max-width: 376px) {
+    
+    @media (max-width: 414px) {
         width: 300px;
         height: 300px;
         border: none;
+    }
+    @media (min-width: 415px) and (max-width: 1063px) {
+        width: 350px;
+        height: 350px;
+        border: none;
+        
     }
 `
 
@@ -74,10 +81,14 @@ const Index = () => {
                             md={6} 
                             sm={4}
                             sx={{
-                                width: '50%',
-                                '@media (max-width: 376px)': {  // Para telas pequenas (mobile)
+                                width: '100%',
+                                '@media (max-width: 160px)': {  // Para telas pequenas (mobile)
                                     width: '100%'
                                 },
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                                
                             }}
                         >
                             <ResponsiveImage  
@@ -94,7 +105,7 @@ const Index = () => {
                             sm={8} 
                             sx={{
                                 width: '50%',
-                                '@media (max-width: 376px)': {  // Para telas pequenas (mobile)
+                                '@media (max-width: 1063px)': {  // Para telas pequenas (mobile)
                                     width: '100%'
                                 },
                             }}
@@ -106,7 +117,7 @@ const Index = () => {
                                 fontSize={35}
                                 sx={{
 
-                                    '@media (max-width: 376px)': {  // Para telas pequenas (mobile)
+                                    '@media (max-width: 1063px)': {  // Para telas pequenas (mobile)
                                         fontSize: '30px',
                                     },
                                 }}
