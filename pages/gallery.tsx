@@ -23,7 +23,7 @@ const StyledCarousel = styled(Carousel)`
             border-radius: 15px;  /* Borda arredondada nas imagens */
         }
     }
-    @media (min-width: 375px) and (max-width: 461px) {
+    @media (min-width: 376px) and (max-width: 461px) {
         display: flex;
         margin-left: 50px;
         padding: 10px;
