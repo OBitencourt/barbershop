@@ -94,7 +94,7 @@ const StyledDivMenu = styled.div`
     
 
     @media (min-width: 730px) {
-        right: -1000px;
+        display: none;
     }
 `
 
