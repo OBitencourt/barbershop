@@ -15,9 +15,17 @@ const StyledSection = styled.section`
 const StyledCarousel = styled(Carousel)`
     border-radius: 15px;
 
-    @media (max-width: 376px) {
+    @media (max-width: 375px) {
         display: flex;
         margin-left: 15px;
+        padding: 10px;
+        & .image {
+            border-radius: 15px;  /* Borda arredondada nas imagens */
+        }
+    }
+    @media (min-width: 375px) and (max-width: 461px) {
+        display: flex;
+        margin-left: 50px;
         padding: 10px;
         & .image {
             border-radius: 15px;  /* Borda arredondada nas imagens */
@@ -48,7 +56,7 @@ const Gallery = () => {
     return (
         <>
             <StyledSection>
-                <Container maxWidth='md'>   
+                <Container maxWidth='md' >   
                     <Typography 
                         color="white"
                         variant="h4"

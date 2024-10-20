@@ -1,7 +1,9 @@
-import { Container } from '@mui/material';
+import { Container, IconButton } from '@mui/material';
 import Image from 'next/image';
 import styled from 'styled-components';
 import { useRouter } from 'next/router'; // Importando useRouter
+import MenuIcon from '@mui/icons-material/Menu';
+import React, {useState} from 'react'
 
 const StyledHeader = styled.header`
     height: 60px;
@@ -58,6 +60,10 @@ const StyledNav = styled.nav`
     border-radius: .75em;
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 730px) {
+        display: none;
+    }
 `;
 
 const Div = styled.div`
@@ -65,6 +71,9 @@ const Div = styled.div`
     position: absolute;
     top: 20%;
     right: 10px;
+    @media (max-width: 730px) {
+        display: none;
+    }
 `;
 
 const StyledIcon = styled.a`
@@ -75,70 +84,199 @@ const StyledIcon = styled.a`
     }
 `;
 
+const StyledDivMenu = styled.div`
+    margin-right: 10px;
+    position: absolute;
+    right: 3px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    
+
+    @media (min-width: 730px) {
+        right: -1000px;
+    }
+`
+
+const Menu = styled.div<{openMenu: boolean}>`
+
+    height: 100vh;
+    position: fixed;
+    width: 50%;
+    right: 0;
+    background-color: black;
+    z-index: 3;
+
+    ${({ openMenu }) => openMenu ? `
+        display: block;
+    ` : `
+        display: none;
+    `}
+
+`
+
+const ButtonMenu = styled.button`
+    background-color: #000000d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    transition: all 300ms ease;
+    &:active {
+        background-color: white;
+        color: black;
+    }
+`
+
+
 const Header = () => {
     const router = useRouter(); // Usando o useRouter
 
     const handleNavigation = (path: string) => {
+        setOpen(false)
         router.push(path); // Navegando para a rota desejada
     };
 
+    const [open, setOpen] = useState(false)
+
+    const handleToggleMenu = () =>{
+        setOpen(!open)
+    }
+
     return (
-        <StyledHeader>
-            <Image  
-                src="/images/tesoura-pentes-icon.webp"  
-                alt="Developer"
-                width={100}
-                height={60}
-                style={{ position: 'absolute', top: 0 }}
-            />
-            <Container maxWidth='sm'>
-                <StyledNav>
-                    <StyledButton 
-                        $isActive={router.pathname === '/'}
+        <>
+            <StyledHeader>
+                <Image  
+                    src="/images/tesoura-pentes-icon.webp"  
+                    alt="Developer"
+                    width={100}
+                    height={60}
+                    style={{ position: 'absolute', top: 0 }}
+                />
+                <Container maxWidth='sm'>
+                    <StyledNav>
+                        <StyledButton 
+                            $isActive={router.pathname === '/'}
+                            onClick={() => handleNavigation('/')}
+                        >
+                            Home
+                        </StyledButton>
+                        <StyledButton 
+                            $isActive={router.pathname === '/gallery'}
+                            onClick={() => handleNavigation('/gallery')}
+                            
+                        >
+                            Gallery
+                        </StyledButton>
+                        <StyledButton $isActive={router.pathname === '/team'} onClick={() => handleNavigation('/team')}>
+                            Team
+                        </StyledButton>
+                        <StyledButton $isActive={router.pathname === '/services'} onClick={() => handleNavigation('/services')}>
+                            Services
+                        </StyledButton>
+                        <StyledButton $isActive={router.pathname === '/news'} onClick={() => handleNavigation('/news')}>
+                            News
+                        </StyledButton>
+                        <StyledButton $isActive={router.pathname === '/career'} onClick={() => handleNavigation('/career')}>
+                            Career
+                        </StyledButton>
+                    </StyledNav>
+                </Container>
+                <Div>
+                    <StyledIcon href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                        <Image  
+                            src="/images/facebook.svg"  
+                            alt="Facebook"
+                            width={35}
+                            height={35}
+                        />
+                    </StyledIcon>
+                    <StyledIcon href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                        <Image  
+                            src="/images/instagram-fill.svg"  
+                            alt="Instagram"
+                            width={35}
+                            height={35}
+                        />
+                    </StyledIcon>
+                </Div>
+                <StyledDivMenu>
+                    <IconButton
+                        color='default'
+                        onClick={() => handleToggleMenu()}
+                    >
+
+                        <MenuIcon 
+                            fontSize='large'
+                        />
+                    </IconButton>
+                </StyledDivMenu>
+            </StyledHeader>
+            <Menu
+                openMenu={open}
+            >
+                <IconButton
+                    
+                    sx={{
+                        position: 'absolute',
+                        right: '3px',
+                        top: '5px',
+                        marginRight: '10px',
+                        color: 'white'
+                    }}
+                    
+                    onClick={() => handleToggleMenu()}
+                >
+                    <div
+                        style={{marginRight: '12px', marginTop: '3px'}}
+                    >
+
+                        x   
+                    </div>
+                    
+                </IconButton>
+                <div
+                    style={{marginTop: '60px'}}
+                >
+
+                    <ButtonMenu
                         onClick={() => handleNavigation('/')}
                     >
                         Home
-                    </StyledButton>
-                    <StyledButton 
-                        $isActive={router.pathname === '/gallery'}
+                    </ButtonMenu>
+                    <ButtonMenu
                         onClick={() => handleNavigation('/gallery')}
-                        
                     >
                         Gallery
-                    </StyledButton>
-                    <StyledButton $isActive={router.pathname === '/team'} onClick={() => handleNavigation('/team')}>
+                    </ButtonMenu>
+                    <ButtonMenu
+                        onClick={() => handleNavigation('/team')}
+                    >
                         Team
-                    </StyledButton>
-                    <StyledButton $isActive={router.pathname === '/services'} onClick={() => handleNavigation('/services')}>
+                    </ButtonMenu>
+                    <ButtonMenu
+                        onClick={() => handleNavigation('/services')}
+                    >
                         Services
-                    </StyledButton>
-                    <StyledButton $isActive={router.pathname === '/news'} onClick={() => handleNavigation('/news')}>
+                    </ButtonMenu>
+                    <ButtonMenu
+                        onClick={() => handleNavigation('/news')}
+                    >
                         News
-                    </StyledButton>
-                    <StyledButton $isActive={router.pathname === '/career'} onClick={() => handleNavigation('/career')}>
+                    </ButtonMenu>
+                    <ButtonMenu
+                        onClick={() => handleNavigation('/career')}
+                    >
                         Career
-                    </StyledButton>
-                </StyledNav>
-            </Container>
-            <Div>
-                <StyledIcon href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                    <Image  
-                        src="/images/facebook.svg"  
-                        alt="Facebook"
-                        width={35}
-                        height={35}
-                    />
-                </StyledIcon>
-                <StyledIcon href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                    <Image  
-                        src="/images/instagram-fill.svg"  
-                        alt="Instagram"
-                        width={35}
-                        height={35}
-                    />
-                </StyledIcon>
-            </Div>
-        </StyledHeader>
+                    </ButtonMenu>
+                </div>
+                
+            </Menu>
+        </>
     );
 };
 
