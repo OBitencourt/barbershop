@@ -104,7 +104,7 @@ const Menu = styled.div<{openMenu: boolean}>`
     position: fixed;
     width: 50%;
     right: 0;
-    background-color: black;
+    background-color: #171515;
     z-index: 3;
 
     ${({ openMenu }) => openMenu ? `
@@ -116,7 +116,7 @@ const Menu = styled.div<{openMenu: boolean}>`
 `
 
 const ButtonMenu = styled.button`
-    background-color: #000000d3;
+    background-color: #171515;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -226,13 +226,14 @@ const Header = () => {
                         right: '3px',
                         top: '5px',
                         marginRight: '10px',
-                        color: 'white'
+                        color: 'white',
+                        marginTop: '3px'
                     }}
                     
                     onClick={() => handleToggleMenu()}
                 >
                     <div
-                        style={{marginRight: '12px', marginTop: '3px'}}
+                        
                     >
 
                         x   
